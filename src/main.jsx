@@ -13,6 +13,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Root from './layout/Root.jsx';
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element:<Login></Login>
+      },
+      {
+        path: '/register',
+        element:<Register></Register>
       }
     ]
   },
