@@ -14,6 +14,7 @@ import Root from './layout/Root.jsx';
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
+import Community from './pages/Community/Community.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     errorElement:<ErrorPage></ErrorPage>,
     element: <Root></Root>,
     children: [
+      {
+        path: '/community',
+        element:<Community></Community>
+    },
       {
         path: '/login',
         element:<Login></Login>
