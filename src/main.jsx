@@ -15,6 +15,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
 import Community from './pages/Community/Community.jsx';
+import Blogs from './pages/Blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/community',
         element:<Community></Community>
+    },
+      {
+        path: '/blogs',
+        element:<Blogs></Blogs>
     },
       {
         path: '/login',
