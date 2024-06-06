@@ -16,6 +16,7 @@ import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
 import Community from './pages/Community/Community.jsx';
 import Blogs from './pages/Blogs/Blogs.jsx';
+import About from './pages/About/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element:<Blogs></Blogs>
+    },
+      {
+        path: '/about',
+        element:<About></About>
     },
       {
         path: '/login',
