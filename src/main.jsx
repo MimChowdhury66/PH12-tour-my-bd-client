@@ -19,40 +19,41 @@ import Blogs from './pages/Blogs/Blogs.jsx';
 import About from './pages/About/About.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Home from './pages/Home/Home.jsx';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     element: <Root></Root>,
     children: [
       {
         path: '/',
-        element:<Home></Home>
-    },
+        element: <Home></Home>
+      },
       {
         path: '/community',
-        element:<Community></Community>
-    },
+        element: <PrivateRoute><Community></Community></PrivateRoute>
+      },
       {
         path: '/blogs',
-        element:<Blogs></Blogs>
-    },
+        element: <PrivateRoute><Blogs></Blogs></PrivateRoute>
+      },
       {
         path: '/about',
-        element:<About></About>
-    },
+        element:<PrivateRoute> <About></About></PrivateRoute>
+      },
       {
         path: '/contact',
-        element:<Contact></Contact>
-    },
+        element: <PrivateRoute><Contact></Contact></PrivateRoute>
+      },
       {
         path: '/login',
-        element:<Login></Login>
+        element: <Login></Login>
       },
       {
         path: '/register',
-        element:<Register></Register>
+        element: <Register></Register>
       }
     ]
   },
