@@ -17,6 +17,7 @@ import Register from './pages/Register/Register.jsx';
 import Community from './pages/Community/Community.jsx';
 import Blogs from './pages/Blogs/Blogs.jsx';
 import About from './pages/About/About.jsx';
+import Contact from './pages/Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element:<About></About>
+    },
+      {
+        path: '/contact',
+        element:<Contact></Contact>
     },
       {
         path: '/login',

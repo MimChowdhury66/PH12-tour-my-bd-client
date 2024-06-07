@@ -19,8 +19,8 @@ const Header = () => {
                             <li><NavLink to="/community" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Community</NavLink></li>
                             <li><NavLink to="/blogs" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Blogs
                                 </NavLink></li>
-                                <li><NavLink to="/about" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>About Us</NavLink></li>
-                                <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Contact Us</NavLink></li>
+                                <li><NavLink to="/about" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>About Us</NavLink></li>
+                                <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Contact Us</NavLink></li>
                             {user ? <>
 
                                 
@@ -42,8 +42,8 @@ const Header = () => {
                         <li><NavLink to="/community" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Community</NavLink></li>
                         <li><NavLink to="/blogs" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Blogs
                         </NavLink></li>
-                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>About Us</NavLink></li>
-                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Contact Us</NavLink></li>
+                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>About Us</NavLink></li>
+                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Contact Us</NavLink></li>
                         <Tooltip id="my-tooltip" />
 
                         {user ? <>
