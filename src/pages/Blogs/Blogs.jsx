@@ -10,7 +10,7 @@ const Blogs = () => {
     return (
         <div>
             <div>
-                <h1 className='text-center text-xl text-blue-400 font-bold mb-6 mt-10'>Bangladesh Travel & Tourism Blog</h1>
+                <h1 className='text-center text-xl  font-bold mb-6 mt-10'><span className='text-green-400'>Bangladesh</span> Travel & Tourism Blog</h1>
 
                 <p className='text-center   mb-6'>Looking for something useful to read about travelling in Bangladesh? You’ve come to the right place. Join the league  <br /> of readers who find here detailed insights,  interesting travel tips and ideas and daily inspiration.</p>
             </div>
@@ -24,7 +24,7 @@ const Blogs = () => {
                             <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">Mahasthangarh</h3>
                             <span className="text-xs dark:text-gray-600">February 19, 2024</span>
                             <p>The history of Mahasthangarh was discussed with Jayant Singh Roy, Assistant Professor, Department of Archeology, Jahangirnagar University. He said, “Mahasthangarh is the oldest capital city of Bangladesh discovered so far Pre-Maurya period, meaning about two and a half thousand years ago, traces of human settlement have been found here. <br />
-                            <span className='font-bold'>By- Buzzin' Around</span></p>
+                                <span className='font-bold'>By- Buzzin' Around</span></p>
                         </div>
                     </a>
                     <div className="grid justify-center  gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -36,7 +36,7 @@ const Blogs = () => {
                                     National Martyrs' Memorial</h3>
                                 <span className="text-xs dark:text-gray-600">April 11, 2024</span>
                                 <p>It is the symbol in the memory of the valour and the sacrifice of all those who gave their lives in the Bangladesh Liberation War of 1971, for bringing independence and separated Bangladesh from Pakistan. The monument is located in Savar, about 35 km north-west of the capital, Dhaka. <br />
-                                <span className='font-bold'>By- Buzzin' Around</span></p>
+                                    <span className='font-bold'>By- Buzzin' Around</span></p>
                             </div>
                         </a>
                         <a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">
@@ -45,7 +45,7 @@ const Blogs = () => {
                                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">LALBAGH FORT</h3>
                                 <span className="text-xs dark:text-gray-600">February 22, 2024</span>
                                 <p>There are numerous statutes throughout the beautifully maintained gardens of Lalbagh Fort. The defensive walls along the eastern portion of the south-west corner have been reinforced with an internal embankment of earth. An underground room with an ornamental half-domed entrance is contained within these defensive walls and it is believed that this may have been used as a summer house. <br />
-                                <span className='font-bold'>By- Buzzin' Around</span></p>
+                                    <span className='font-bold'>By- Buzzin' Around</span></p>
                             </div>
                         </a>
                         <a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">

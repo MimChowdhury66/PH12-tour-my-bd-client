@@ -1,0 +1,39 @@
+[
+    {
+      "tourType": "Beach",
+      "tripTitle": "Cox's Bazar Beach Holiday",
+      "price": "800",
+      "photoUrl": "https://i.postimg.cc/zfWMD1bX/cox.jpg"
+    },
+    {
+      "tourType": "Cultural",
+      "tripTitle": "Historic Dhaka City Tour",
+      "price": "500",
+      "photoUrl": "https://i.postimg.cc/4y4F178m/dhaka.jpg"
+    },
+    {
+      "tourType": "Adventure",
+      "tripTitle": "Sundarbans Mangrove Forest Adventure",
+      "price": "1200",
+      "photoUrl": "https://i.postimg.cc/ZRxM3FxG/forest.jpg"
+    },
+    {
+      "tourType": "Historical",
+      "tripTitle": "Visit the Ancient City of Mahasthangarh",
+      "price": "700",
+      "photoUrl": "https://i.postimg.cc/nzJWCwBK/mahastanghar.jpg"
+    },
+    {
+      "tourType": "Hill",
+      "tripTitle": "Bandarban Hill Tracks Exploration",
+      "price": "900",
+      "photoUrl": "https://i.postimg.cc/4xjqT33S/bandarban.jpg"
+    },
+    {
+      "tourType": "Nature",
+      "tripTitle": "Sylhet Tea Gardens and Waterfalls",
+      "price": "600",
+      "photoUrl": "https://i.postimg.cc/h4MYtsjx/Sylhet.jpg"
+    }
+  ]
+  
