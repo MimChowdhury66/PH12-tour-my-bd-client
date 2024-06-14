@@ -20,7 +20,11 @@ import About from './pages/About/About.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Home from './pages/Home/Home.jsx';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute.jsx';
+import {
+  QueryClient,
+  QueryClientProvider,
 
+} from '@tanstack/react-query';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,11 +63,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      </QueryClientProvider>
+      
     </AuthProvider>
 
     <ToastContainer />
