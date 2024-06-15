@@ -5,6 +5,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import PackageCard from '../PackageCard/PackageCard';
+import { Link } from 'react-router-dom';
 // import video from '../../assets/overview.mp4'
 const Tourism = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -34,11 +35,11 @@ const Tourism = () => {
             <div>
                 <h1 className='text-center text-2xl  font-bold mb-6 mt-10'><span className='text-green-400'>Tourism</span> and Travel Guide</h1>
             </div>
-            <div>
+            <div className='text-center'>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                    <TabList >
+                    <TabList>
                         <Tab><h1 className='lg:text-xl font-bold'>Overview</h1></Tab>
-                        <Tab ><h1 className='lg:text-xl text-green-400 font-bold'>Our Packages</h1></Tab>
+                        <Tab ><h1 className='lg:text-xl  font-bold'>Our Packages</h1></Tab>
                         <Tab ><h1 className='lg:text-xl font-bold'>Meet Our Tour Guide</h1> </Tab>
                     </TabList>
 
@@ -56,6 +57,7 @@ const Tourism = () => {
                                 packages.slice(0, 3).map(item => <PackageCard item={item}></PackageCard>)
                             }
                         </div>
+                        <Link to='/allPackages'><button className="btn btn-success mt-5 text-white">All Packages</button></Link>
                     </TabPanel>
                     <TabPanel>
                         <div>

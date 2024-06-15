@@ -25,6 +25,7 @@ import {
   QueryClientProvider,
 
 } from '@tanstack/react-query';
+import AllPackages from './pages/AllPackages/AllPackages.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/allPackages',
+        element:<AllPackages></AllPackages>
       }
     ]
   },
