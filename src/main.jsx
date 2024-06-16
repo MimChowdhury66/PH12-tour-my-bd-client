@@ -26,6 +26,8 @@ import {
 
 } from '@tanstack/react-query';
 import AllPackages from './pages/AllPackages/AllPackages.jsx';
+import AllStories from './pages/AllStories/AllStories.jsx';
+import TourGuideProfile from './pages/TourGuideProfile/TourGuideProfile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element:<PrivateRoute> <About></About></PrivateRoute>
+        element: <PrivateRoute> <About></About></PrivateRoute>
       },
       {
         path: '/contact',
@@ -62,7 +64,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/allPackages',
-        element:<AllPackages></AllPackages>
+        element: <AllPackages></AllPackages>
+      },
+      {
+        path: '/allStory',
+        element: <AllStories></AllStories>
+      },
+      {
+        path: '/tourGuideProfile/:id',
+        element: <PrivateRoute><TourGuideProfile></TourGuideProfile></PrivateRoute>
       }
     ]
   },
@@ -73,9 +83,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </QueryClientProvider>
-      
+
     </AuthProvider>
 
     <ToastContainer />

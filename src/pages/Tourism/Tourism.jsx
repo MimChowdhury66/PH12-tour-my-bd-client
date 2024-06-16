@@ -86,15 +86,15 @@ const Tourism = () => {
                                                     <td><div className="mask mask-squircle w-12 h-12 mx-auto">
                                                         <img src={item.profilePicture} alt="Avatar Tailwind CSS Component" />
                                                     </div></td>
-                                                    <td>{item.name} </td>
+                                                    <td>{item.name}</td>
                                                     <td>{item.phone}</td>
                                                     <td>{item.education}</td>
 
                                                     <td className="flex gap-2 m-2">
 
-                                                        <button
+                                                        <Link to={`/tourGuideProfile/${item._id}`}><button
                                                             // onClick={() => handleDelete(item._id)}
-                                                            className="btn text-black mx-auto  ">Details</button>
+                                                            className="btn text-black mx-auto  ">Details</button></Link>
                                                     </td>
                                                 </tr>
                                             )
