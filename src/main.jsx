@@ -28,6 +28,7 @@ import {
 import AllPackages from './pages/AllPackages/AllPackages.jsx';
 import AllStories from './pages/AllStories/AllStories.jsx';
 import TourGuideProfile from './pages/TourGuideProfile/TourGuideProfile.jsx';
+import StoryDetail from './pages/StoryDetail/StoryDetail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: '/tourGuideProfile/:id',
         element: <PrivateRoute><TourGuideProfile></TourGuideProfile></PrivateRoute>
+      },
+      {
+        path: '/storyDetail/:id',
+        element:<StoryDetail></StoryDetail>
       }
     ]
   },

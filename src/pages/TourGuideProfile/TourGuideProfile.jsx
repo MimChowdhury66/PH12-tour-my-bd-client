@@ -26,7 +26,11 @@ const TourGuideProfile = () => {
                 <div className="hero bg-base-200">
                     <div className="hero-content flex-col lg:flex-row">
                         <img src={guide.profilePicture} />
+                        <div className='grid text-center'>
                         <h1 className="lg:text-5xl font-bold">{guide.name}</h1>
+                    
+                    <h1 className="lg:text-xl ">{guide.email}</h1>
+                        </div>
                         <div>
 
                             <p className="pt-6 font-bold underline text-center">Contact Details</p>
@@ -49,6 +53,8 @@ const TourGuideProfile = () => {
                 </div>
             </div>
 
+            {/* add comment section */}
+            
 
         </div>
     );

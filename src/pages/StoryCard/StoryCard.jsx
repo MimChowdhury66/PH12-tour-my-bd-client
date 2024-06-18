@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StoryCard = ({ item }) => {
-    const { spot, reviewerName, reviewerEmail, reviewText } = item;
+    const {_id, spot, reviewerName, reviewerEmail, reviewText } = item;
     return (
         <section className=" dark:bg-gray-100 dark:text-gray-800">
 
-            <div className="container h-full flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 ">
-                <div className="flex flex-col max-w-sm mx-4  shadow-lg ">
+            <Link to={`/storyDetail/${_id}`}>
+            <div className="container  flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 h-full ">
+                <div className="flex flex-col max-w-sm mx-4  shadow-lg h-full ">
                     <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                         <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
                             <h1 className='font-bold'>Spot: <span className='text-green-400'>{spot}</span> </h1>
@@ -29,7 +31,7 @@ const StoryCard = ({ item }) => {
 
 
 
-            </div>
+            </div></Link>
         </section>
     );
 };
