@@ -8,8 +8,9 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 const StoryDetail = () => {
     const { user } = useContext(AuthContext);
     const currentPageUrl = window.location.href;
-    console.log(currentPageUrl)
+    // console.log(currentPageUrl)
     const { id } = useParams();
+    // console.log(id)
     const { data: story = [], isPending } = useQuery({
         queryKey: ['storyDetail'],
         queryFn: async () => {
