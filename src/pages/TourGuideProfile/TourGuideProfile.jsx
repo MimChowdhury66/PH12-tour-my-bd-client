@@ -10,7 +10,8 @@ const TourGuideProfile = () => {
     const { user } = useContext(AuthContext);
 
     const { id } = useParams();
-    const { refetch, data: guide = [] } = useQuery({
+
+    const { refetch: guideRefetch, data: guide = [] } = useQuery({
         queryKey: ['guide'],
         queryFn: async () => {
             const res = await axios.get(`http://localhost:5000/guide/${id}`)
@@ -20,7 +21,16 @@ const TourGuideProfile = () => {
         }
 
     });
+    const { refetch, data: reviews = [] } = useQuery({
+        queryKey: ['reviews'],
+        queryFn: async () => {
+            const res = await axios.get(`http://localhost:5000/review/${id}`)
+            console.log(res.data)
+            return res.data;
 
+        }
+
+    });
 
     const {
         register,
@@ -29,27 +39,44 @@ const TourGuideProfile = () => {
     } = useForm();
 
     const onSubmit = data => {
+        if (user) {
+            // console.log(data)
+            const { email } = user;
+            const { rating, makeComment } = data;
+            const { _id } = guide;
+            const newPost = { rating, makeComment, userEmail: email, guideId: _id };
+            console.log(newPost);
+            axios.post('http://localhost:5000/review', newPost)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        Swal.fire({
 
-        console.log(data)
-        // const { userEmail: email, displayName, photoURL } = user;
-        const { rating, makeComment } = data;
-        const { name, email, profilePicture, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo } = guide;
-        const newPost = { rating, makeComment, name, email, profilePicture, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo };
-        console.log(newPost);
-        axios.post('http://localhost:5000/guide', newPost)
-            .then(res => {
-                console.log(res.data)
-                if (res.data.insertedId) {
-                    Swal.fire({
-
-                        icon: "success",
-                        title: 'Review Added',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    refetch()
+                            icon: "success",
+                            title: 'Review Added',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        refetch()
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: "You are not logged in",
+                text: "Please Login first to add item into the cart",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, confirm it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login')
                 }
-            })
+            });
+        }
+
 
     }
     return (
@@ -109,19 +136,19 @@ const TourGuideProfile = () => {
                             </thead>
                             <tbody>
 
-                                {/* {
-                                            guides.map((item, index) =>
-                                                // console.log(item);
-                                                <tr>
+                                {
+                                    reviews.map((item, index) =>
+                                        // console.log(item);
+                                        <tr>
 
-                                                    <th>{index + 1}</th>
-                                                    
-                                                    <td>{item.name}</td>
-                                                    <td>{item.phone}</td>
-                                                    
-                                                </tr>
-                                            )
-                                        } */}
+                                            <th>{index + 1}</th>
+
+                                            <td>{item.rating}</td>
+                                            <td>{item.makeComment}</td>
+
+                                        </tr>
+                                    )
+                                }
 
 
                             </tbody>
