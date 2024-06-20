@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const PackageCard = ({ item }) => {
-    const { TourType, tripTitle, price, photoUrl } = item;
+    const { _id, TourType, tripTitle, price, photoUrl } = item;
     return (
         <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -17,7 +18,8 @@ const PackageCard = ({ item }) => {
                 <p>Price: ${price}</p>
 
                 <div className="card-actions">
-                    <button className="btn bg-green-400">View Package</button>
+                    <Link to={`/packageDetails/${_id}`}><button className="btn bg-green-400">View Package</button></Link>
+
                 </div>
             </div>
         </div>

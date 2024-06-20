@@ -30,6 +30,7 @@ import AllStories from './pages/AllStories/AllStories.jsx';
 import TourGuideProfile from './pages/TourGuideProfile/TourGuideProfile.jsx';
 import StoryDetail from './pages/StoryDetail/StoryDetail.jsx';
 import TourTypeDetails from './pages/TourTypeDetails/TourTypeDetails.jsx';
+import PackageDetails from './pages/PackageDetails/PackageDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
         path: '/tourTypeDetails/:tourType',
         element:<TourTypeDetails></TourTypeDetails>
       },
+      {
+        path: '/packageDetails/:id',
+        element:<PackageDetails></PackageDetails>
+      }
       
     ]
   },
