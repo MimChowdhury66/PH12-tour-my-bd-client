@@ -25,7 +25,7 @@ const TourGuideProfile = () => {
         queryKey: ['reviews'],
         queryFn: async () => {
             const res = await axios.get(`http://localhost:5000/review/${id}`)
-            console.log(res.data)
+            // console.log(res.data)
             return res.data;
 
         }
