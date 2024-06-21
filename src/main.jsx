@@ -31,6 +31,9 @@ import TourGuideProfile from './pages/TourGuideProfile/TourGuideProfile.jsx';
 import StoryDetail from './pages/StoryDetail/StoryDetail.jsx';
 import TourTypeDetails from './pages/TourTypeDetails/TourTypeDetails.jsx';
 import PackageDetails from './pages/PackageDetails/PackageDetails.jsx';
+import Dashboard from './layout/Dashboard.jsx';
+import UserProfile from './pages/Dashboard/UserProfile/UserProfile.jsx';
+import UserBookings from './pages/Dashboard/UserBookings/UserBookings.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -79,19 +82,34 @@ const router = createBrowserRouter([
       },
       {
         path: '/storyDetail/:id',
-        element:<StoryDetail></StoryDetail>
+        element: <StoryDetail></StoryDetail>
       },
       {
         path: '/tourTypeDetails/:tourType',
-        element:<TourTypeDetails></TourTypeDetails>
+        element: <TourTypeDetails></TourTypeDetails>
       },
       {
         path: '/packageDetails/:id',
-        element:<PackageDetails></PackageDetails>
+        element: <PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>
       }
-      
+
     ]
   },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: 'profile',
+        element: <UserProfile></UserProfile>
+
+      },
+      {
+        path: 'bookings',
+        element:<UserBookings></UserBookings>
+      }
+    ]
+  }
 ]);
 
 const queryClient = new QueryClient()

@@ -12,7 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Swal from 'sweetalert2';
 
 const PackageDetails = () => {
-    
+
     const { user } = useContext(AuthContext);
     const { id } = useParams();
     const { refetch, data: packages = [] } = useQuery({
@@ -51,15 +51,15 @@ const PackageDetails = () => {
 
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         const { Email, PackageName, PhotoURL, Price, TourDate, TourGuide, UserName } = data;
         const newPost = { Email, PackageName, PhotoURL, Price, TourDate, TourGuide, UserName };
-        console.log(newPost);
+        // console.log(newPost);
         axios.post('http://localhost:5000/booking', newPost)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.insertedId) {
-
+                    reset()
                     Swal.fire({
 
                         icon: "success",
@@ -67,7 +67,7 @@ const PackageDetails = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                   
+
                     document.getElementById('my_modal_1').showModal()
                 }
             })
@@ -321,10 +321,10 @@ const PackageDetails = () => {
                         {/* <button className="btn" onClick={handleModal}>open modal</button> */}
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box">
-                                
-                                    <p className="py-4">Confirm Your Booking</p>
-                                    <Link to='/'>My Booking Page</Link>
-                                    
+
+                                <p className="py-4">Confirm Your Booking</p>
+                                <Link to='/'><a className='text-green-400' href="">See Your bookings here--My Booking Page</a></Link>
+
                                 <div className="modal-action">
                                     <form method="dialog">
                                         {/* if there is a button in form, it will close the modal */}

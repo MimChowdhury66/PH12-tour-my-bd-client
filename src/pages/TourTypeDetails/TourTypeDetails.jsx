@@ -11,7 +11,7 @@ const TourTypeDetails = () => {
         queryKey: ['tourTypeDetails'],
         queryFn: async () => {
             const res = await axios.get(`http://localhost:5000/package/${tourType}`)
-            // console.log(res.data)
+            console.log(res.data)
             return res.data;
 
         }

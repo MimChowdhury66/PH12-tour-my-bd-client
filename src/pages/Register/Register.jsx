@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import picture from '../../../public/login.jpg'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import axios from 'axios';
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -27,10 +28,20 @@ const Register = () => {
                 // navigate('/')
                 updateUserProfile(data.FullName, data.PhotoURL)
                     .then(() => {
-                        toast.success('Register Successfully', {
-                            autoClose: 5000,
-                        });
-                        navigate('/')
+                        const userInfo = {
+                            name: data.FullName,
+                            email: data.Email
+                        }
+                        axios.post('http://localhost:5000/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    toast.success('Register Successfully', {
+                                        autoClose: 5000,
+                                    });
+                                    navigate('/')
+                                }
+                            })
+
                     })
 
             })
@@ -42,9 +53,17 @@ const Register = () => {
     const handleSocialLogin = socialProvider => {
         socialProvider()
             .then(result => {
-                if (result.user) {
-                    navigate(location?.state || '/')
+
+                const userInfo = {
+                    name: result.user?.displayName,
+                    email: result.user?.email
                 }
+                axios.post('http://localhost:5000/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                        navigate(location?.state || '/')
+
+                    })
             })
     }
     return (

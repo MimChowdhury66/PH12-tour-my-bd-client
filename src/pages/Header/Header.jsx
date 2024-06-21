@@ -23,7 +23,7 @@ const Header = () => {
                             <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Contact Us</NavLink></li>
                             {user ? <>
 
-
+                                <li><NavLink to="/dashboard" className={({ isActive }) => isActive ? 'font-bold text-blue-400' : 'font-bold'}>Dashboard</NavLink></li>
                                 <li><button onClick={logout} className="btn lg:text-xl text-black  bg-blue-200 ">Logout</button> </li>
                             </>
                                 :
@@ -45,6 +45,7 @@ const Header = () => {
                         <li><NavLink to="/about" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>About Us</NavLink></li>
                         <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'font-bold text-green-400' : 'font-bold'}>Contact Us</NavLink></li>
                         <Tooltip id="my-tooltip" />
+
 
                         {user ? <>
 
