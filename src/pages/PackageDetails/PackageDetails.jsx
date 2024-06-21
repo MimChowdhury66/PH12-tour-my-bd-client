@@ -63,7 +63,7 @@ const PackageDetails = () => {
                     Swal.fire({
 
                         icon: "success",
-                        title: 'Review Added',
+                        title: 'Booking Added',
                         showConfirmButton: false,
                         timer: 1500
                     });

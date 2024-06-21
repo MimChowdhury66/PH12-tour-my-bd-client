@@ -5,13 +5,17 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import TouristSidebar from './TouristSidebar';
 import GuideSidebar from './GuideSidebar';
 import AdminSidebar from './AdminSidebar';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Dashboard = () => {
 
     const { user, loading } = useContext(AuthContext);
     const { role, isPending } = useRole();
     if (isPending || loading) {
-        return <p>loading</p>
+        return <div className='flex justify-center mt-5'><span className="loading loading-bars loading-xs"></span>
+            <span className="loading loading-bars loading-sm"></span>
+            <span className="loading loading-bars loading-md"></span>
+            <span className="loading loading-bars loading-lg"></span></div>
     }
     return (
 
@@ -19,9 +23,10 @@ const Dashboard = () => {
 
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center p-4 border ">
+            <div className="drawer-content flex flex-col items-center justify-center p-4  ">
 
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden "><GiHamburgerMenu />
+                </label>
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
