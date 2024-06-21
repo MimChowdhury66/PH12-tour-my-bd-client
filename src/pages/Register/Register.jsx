@@ -30,7 +30,8 @@ const Register = () => {
                     .then(() => {
                         const userInfo = {
                             name: data.FullName,
-                            email: data.Email
+                            email: data.Email,
+                            role:'Tourist'
                         }
                         axios.post('http://localhost:5000/users', userInfo)
                             .then(res => {
@@ -56,7 +57,8 @@ const Register = () => {
 
                 const userInfo = {
                     name: result.user?.displayName,
-                    email: result.user?.email
+                    email: result.user?.email,
+                    role:'Tourist'
                 }
                 axios.post('http://localhost:5000/users', userInfo)
                     .then(res => {

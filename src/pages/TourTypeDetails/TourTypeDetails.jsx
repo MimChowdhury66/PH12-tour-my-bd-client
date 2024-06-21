@@ -10,8 +10,8 @@ const TourTypeDetails = () => {
     const { data: packages = [] } = useQuery({
         queryKey: ['tourTypeDetails'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/package/${tourType}`)
-            console.log(res.data)
+            const res = await axios.get(`http://localhost:5000/packageTourType/${tourType}`)
+            // console.log('detail', res.data)
             return res.data;
 
         }

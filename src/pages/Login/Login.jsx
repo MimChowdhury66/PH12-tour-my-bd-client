@@ -42,7 +42,8 @@ const Login = () => {
             .then(result => {
                 const userInfo = {
                     name: result.user?.displayName,
-                    email: result.user?.email
+                    email: result.user?.email,
+                    role:'Tourist'
                 }
                 axios.post('http://localhost:5000/users', userInfo)
                     .then(res => {

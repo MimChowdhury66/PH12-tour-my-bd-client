@@ -1,45 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import useRole from '../hooks/useRole';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import TouristSidebar from './TouristSidebar';
+import GuideSidebar from './GuideSidebar';
+import AdminSidebar from './AdminSidebar';
 
 const Dashboard = () => {
+
+    const { user, loading } = useContext(AuthContext);
+    const { role, isPending } = useRole();
+    if (isPending || loading) {
+        return <p>loading</p>
+    }
     return (
-        // <div className='flex'>
-        //     <div className='w-72 min-h-screen bg-[#D1A054]'>
-        //         <ul className="menu grid gap-3">
 
-
-
-
-        //             <li><NavLink to='/dashboard/profile'> My Profile</NavLink></li>
-        //             <li><NavLink to='/dashboard/bookings'> My Bookings</NavLink></li>
-        //             <li><NavLink to='/dashboard/wishlist'> My Wishlist</NavLink></li>
-        //             <button className='btn '>Request to Admin</button>
-
-
-
-
-
-        //             <div className="divider"></div>
-        //             <li><NavLink to='/'> Home</NavLink></li>
-        //         </ul>
-        //     </div>
-        //     <div className='flex-1 p-8'>
-        //         <Outlet></Outlet>
-        //     </div>
-        // </div>
 
 
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content flex flex-col items-center justify-center p-4 border ">
 
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                    {/* Sidebar content here */}
+                {/* <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    Sidebar content here
                     <li><NavLink to='/dashboard/profile'> My Profile</NavLink></li>
                     <li><NavLink to='/dashboard/bookings'> My Bookings</NavLink></li>
                     <li><NavLink to='/dashboard/wishlist'> My Wishlist</NavLink></li>
@@ -49,7 +37,18 @@ const Dashboard = () => {
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/allPackages'>All Packages</NavLink></li>
                     <li><NavLink to='/allStory'>All Stories</NavLink></li>
-                </ul>
+                </ul> */}
+                {
+                    user && role === 'Tourist' && <TouristSidebar></TouristSidebar>
+                }
+                {
+                    user && role === 'guide' && <GuideSidebar></GuideSidebar>
+                }
+                {
+                    user && role === 'admin' && <AdminSidebar></AdminSidebar>
+                }
+
+
 
             </div>
         </div>
