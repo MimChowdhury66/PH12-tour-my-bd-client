@@ -36,6 +36,7 @@ import UserProfile from './pages/Dashboard/UserProfile/UserProfile.jsx';
 import UserBookings from './pages/Dashboard/UserBookings/UserBookings.jsx';
 import UserWishlist from './pages/Dashboard/UserWishlist/UserWishlist.jsx';
 import GuideProfile from './pages/Dashboard/GuideProfile/GuideProfile.jsx';
+import AdminProfile from './pages/Dashboard/AdminProfile/AdminProfile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
       {
         path: 'guideProfile',
         element:<GuideProfile></GuideProfile>
+      },
+      {
+        path: 'adminProfile',
+        element:<AdminProfile></AdminProfile>
       }
     ]
   }

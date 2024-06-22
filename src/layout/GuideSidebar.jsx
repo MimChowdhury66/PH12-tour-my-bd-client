@@ -6,7 +6,7 @@ const GuideSidebar = () => {
         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li><NavLink to='/dashboard/guideProfile'> My Profile</NavLink></li>
-            <li><NavLink to='/dashboard/bookings'> My Assigned Tours</NavLink></li>
+            <li><NavLink to='/dashboard/assignedTours'> My Assigned Tours</NavLink></li>
 
 
             <div className="divider"></div>
