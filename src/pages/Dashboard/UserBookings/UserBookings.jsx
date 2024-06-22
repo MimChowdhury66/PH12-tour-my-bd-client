@@ -24,6 +24,7 @@ const UserBookings = () => {
                 <h1 className='text-center text-2xl  font-bold mb-6 '>My Bookings</h1>
             </div>
 
+            <div>
             <div className="overflow-x-auto">
                 <table className="table  text-center mt-5">
                     {/* head */}
@@ -68,6 +69,7 @@ const UserBookings = () => {
 
 
                 </table>
+            </div>
             </div>
 
 

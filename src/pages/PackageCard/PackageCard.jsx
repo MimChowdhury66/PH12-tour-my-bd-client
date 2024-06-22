@@ -20,7 +20,7 @@ const PackageCard = ({ item }) => {
             // console.log(cartItem)
             axios.post('http://localhost:5000/wishlist', wishlist)
                 .then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     if (res.data.insertedId) {
                         Swal.fire({
 
