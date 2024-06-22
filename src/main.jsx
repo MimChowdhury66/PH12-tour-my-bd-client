@@ -38,6 +38,7 @@ import UserWishlist from './pages/Dashboard/UserWishlist/UserWishlist.jsx';
 import GuideProfile from './pages/Dashboard/GuideProfile/GuideProfile.jsx';
 import AdminProfile from './pages/Dashboard/AdminProfile/AdminProfile.jsx';
 import AddPackages from './pages/Dashboard/AddPackages/AddPackages.jsx';
+import ManageUser from './pages/Dashboard/ManageUser/ManageUser.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -127,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: 'addPackage',
         element:<AddPackages></AddPackages>
+      },
+      {
+        path: 'manageUser',
+        element:<ManageUser></ManageUser>
       }
     ]
   }

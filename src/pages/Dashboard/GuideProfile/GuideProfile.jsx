@@ -14,10 +14,10 @@ const GuideProfile = () => {
 
     } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         const { profilePicture, email, name, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo } = data;
         const newPost = { profilePicture, email, name, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo };
-        console.log(newPost);
+        // console.log(newPost);
         axios.post('http://localhost:5000/guide', newPost)
             .then(res => {
                 console.log(res.data)
