@@ -8,7 +8,7 @@ const useRole = () => {
     const { data: role = '' ,isPending} = useQuery({
         queryKey: ['role'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/role/${user.email}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/role/${user.email}`)
             // console.log(res.data)
             return res.data;
 

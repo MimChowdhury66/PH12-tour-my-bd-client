@@ -18,7 +18,7 @@ const UserProfile = () => {
         const { spot, reviewerEmail, reviewerName, reviewText } = data;
         const newPost = { spot, reviewerEmail, reviewerName, reviewText };
         console.log(newPost);
-        axios.post('http://localhost:5000/story', newPost)
+        axios.post('https://tour-my-bangladesh-server.vercel.app/story', newPost)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {

@@ -16,7 +16,7 @@ const AddPackages = () => {
         const { photoUrl, tripTitle,price ,TourType,travelPhoto ,photoUrlFour,photoUrlThree,photoUrlTwo,tourPlanOne,tourPlanTwo,tourPlanThree} = data;
         const newPost = { photoUrl, tripTitle,price,TourType,travelPhoto,photoUrlFour,photoUrlThree,photoUrlTwo,tourPlanOne,tourPlanTwo,tourPlanThree};
         // console.log(newPost);
-        axios.post('http://localhost:5000/package', newPost)
+        axios.post('https://tour-my-bangladesh-server.vercel.app/package', newPost)
             .then(res => {
                 // console.log(res.data)
                 if (res.data.insertedId) {

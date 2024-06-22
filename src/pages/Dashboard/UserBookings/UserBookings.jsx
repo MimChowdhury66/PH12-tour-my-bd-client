@@ -11,7 +11,7 @@ const UserBookings = () => {
     const { data: bookings = [] } = useQuery({
         queryKey: ['getBookings'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/booking/${user.email}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/booking/${user.email}`)
             // console.log(res.data)
             return res.data;
 

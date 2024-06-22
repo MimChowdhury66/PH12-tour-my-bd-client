@@ -14,7 +14,7 @@ const TourGuideProfile = () => {
     const { refetch: guideRefetch, data: guide = [] } = useQuery({
         queryKey: ['guide'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/guide/${id}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/guide/${id}`)
             // console.log(res.data)
             return res.data;
 
@@ -24,7 +24,7 @@ const TourGuideProfile = () => {
     const { refetch, data: reviews = [] } = useQuery({
         queryKey: ['reviews'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/review/${id}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/review/${id}`)
             // console.log(res.data)
             return res.data;
 
@@ -46,7 +46,7 @@ const TourGuideProfile = () => {
             const { _id } = guide;
             const newPost = { rating, makeComment, userEmail: email, guideId: _id };
             console.log(newPost);
-            axios.post('http://localhost:5000/review', newPost)
+            axios.post('https://tour-my-bangladesh-server.vercel.app/review', newPost)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.insertedId) {

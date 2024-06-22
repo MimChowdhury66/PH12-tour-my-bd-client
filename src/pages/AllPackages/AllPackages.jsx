@@ -7,7 +7,7 @@ const AllPackages = () => {
     const { data: packages = [] } = useQuery({
         queryKey: ['packages'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/package')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/package')
             // console.log(res.data)
             return res.data;
 

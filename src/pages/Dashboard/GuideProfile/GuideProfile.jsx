@@ -18,7 +18,7 @@ const GuideProfile = () => {
         const { profilePicture, email, name, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo } = data;
         const newPost = { profilePicture, email, name, phone, address, education, skillOne, skillTwo, skillThree, position, company, duration, positionTwo, companyTwo, durationTwo };
         // console.log(newPost);
-        axios.post('http://localhost:5000/guide', newPost)
+        axios.post('https://tour-my-bangladesh-server.vercel.app/guide', newPost)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {

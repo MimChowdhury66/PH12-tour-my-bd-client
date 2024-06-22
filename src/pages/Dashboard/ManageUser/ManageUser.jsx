@@ -7,7 +7,7 @@ const ManageUser = () => {
     const { data: users = [] } = useQuery({
         queryKey: ['requestToAdmin'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/users')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/users')
             // console.log(res.data)
             return res.data;
 
@@ -17,7 +17,7 @@ const ManageUser = () => {
 
     const handleAdmin = (user) => {
 
-        axios.patch(`http://localhost:5000/users/admin/${user._id}`)
+        axios.patch(`https://tour-my-bangladesh-server.vercel.app/users/admin/${user._id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
@@ -47,7 +47,7 @@ const ManageUser = () => {
     }
     const handleGuide = (user) => {
 
-        axios.patch(`http://localhost:5000/users/guide/${user._id}`)
+        axios.patch(`https://tour-my-bangladesh-server.vercel.app/users/guide/${user._id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
@@ -86,7 +86,7 @@ const ManageUser = () => {
             <div className='join'>
                 <div>
                     <input className='input input-bordered join-item'
-                        placeholder='Search user name'
+                        placeholder='Search User name'
                     // value={search}
                     // onChange={handleSearchChange}
                     />

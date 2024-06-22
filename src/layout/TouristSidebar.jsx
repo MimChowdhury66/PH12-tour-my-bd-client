@@ -13,7 +13,7 @@ const TouristSidebar = () => {
             photoUrl: user.photoURL, email: user.email, name: user.displayName
         }
         // console.log(cartItem)
-        axios.post('http://localhost:5000/users', makeRequest)
+        axios.post('https://tour-my-bangladesh-server.vercel.app/users', makeRequest)
             .then(res => {
                 // console.log(res.data)
                 if (res.data.insertedId) {

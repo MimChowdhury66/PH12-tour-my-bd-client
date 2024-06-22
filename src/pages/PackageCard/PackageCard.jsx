@@ -18,7 +18,7 @@ const PackageCard = ({ item }) => {
                 packageId: _id, email: user.email
             }
             // console.log(cartItem)
-            axios.post('http://localhost:5000/wishlist', wishlist)
+            axios.post('https://tour-my-bangladesh-server.vercel.app/wishlist', wishlist)
                 .then(res => {
                     // console.log(res.data)
                     if (res.data.insertedId) {

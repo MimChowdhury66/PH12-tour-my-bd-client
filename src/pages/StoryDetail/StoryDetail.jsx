@@ -14,7 +14,7 @@ const StoryDetail = () => {
     const { data: story = [], isPending } = useQuery({
         queryKey: ['storyDetail'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/story/${id}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/story/${id}`)
             // console.log(res.data)
 
             return res.data;

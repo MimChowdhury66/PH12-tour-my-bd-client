@@ -18,7 +18,7 @@ const PackageDetails = () => {
     const { refetch, data: packages = [] } = useQuery({
         queryKey: ['packageDetails'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/package/${id}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/package/${id}`)
             // console.log(res.data)
             return res.data;
 
@@ -29,7 +29,7 @@ const PackageDetails = () => {
     const { data: guides = [] } = useQuery({
         queryKey: ['guidesDetail'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/guide')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/guide')
             // console.log(res.data)
             return res.data;
 
@@ -55,7 +55,7 @@ const PackageDetails = () => {
         const { Email, PackageName, PhotoURL, Price, TourDate, TourGuide, UserName } = data;
         const newPost = { Email, PackageName, PhotoURL, Price, TourDate, TourGuide, UserName };
         // console.log(newPost);
-        axios.post('http://localhost:5000/booking', newPost)
+        axios.post('https://tour-my-bangladesh-server.vercel.app/booking', newPost)
             .then(res => {
                 // console.log(res.data)
                 if (res.data.insertedId) {

@@ -13,7 +13,7 @@ const UserWishlist = () => {
     const { refetch, data: wishlist = [] } = useQuery({
         queryKey: ['wishlist'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/wishlist/${user.email}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/wishlist/${user.email}`)
             // console.log(res.data)
             return res.data;
 
@@ -34,7 +34,7 @@ const UserWishlist = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/wishlistDelete/${id}`)
+                axios.delete(`https://tour-my-bangladesh-server.vercel.app/wishlistDelete/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {

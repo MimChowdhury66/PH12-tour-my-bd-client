@@ -13,7 +13,7 @@ const Tourism = () => {
     const { data: packages = [] } = useQuery({
         queryKey: ['packages'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/package')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/package')
             // console.log(res.data)
             return res.data;
 
@@ -23,7 +23,7 @@ const Tourism = () => {
     const { data: guides = [] } = useQuery({
         queryKey: ['guides'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/guide')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/guide')
             // console.log(res.data)
             return res.data;
 

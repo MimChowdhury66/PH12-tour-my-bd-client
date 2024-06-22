@@ -33,7 +33,7 @@ const Register = () => {
                             email: data.Email,
                             role:'Tourist'
                         }
-                        axios.post('http://localhost:5000/users', userInfo)
+                        axios.post('https://tour-my-bangladesh-server.vercel.app/users', userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
                                     toast.success('Register Successfully', {
@@ -60,7 +60,7 @@ const Register = () => {
                     email: result.user?.email,
                     role:'Tourist'
                 }
-                axios.post('http://localhost:5000/users', userInfo)
+                axios.post('https://tour-my-bangladesh-server.vercel.app/users', userInfo)
                     .then(res => {
                         console.log(res.data)
                         navigate(location?.state || '/')

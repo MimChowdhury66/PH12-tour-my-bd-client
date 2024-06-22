@@ -7,7 +7,7 @@ const AllStories = () => {
     const { data: story = [] } = useQuery({
         queryKey: ['story'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/story')
+            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/story')
             // console.log(res.data)
             return res.data;
 
