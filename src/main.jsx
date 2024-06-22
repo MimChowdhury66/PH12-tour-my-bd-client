@@ -35,6 +35,7 @@ import Dashboard from './layout/Dashboard.jsx';
 import UserProfile from './pages/Dashboard/UserProfile/UserProfile.jsx';
 import UserBookings from './pages/Dashboard/UserBookings/UserBookings.jsx';
 import UserWishlist from './pages/Dashboard/UserWishlist/UserWishlist.jsx';
+import GuideProfile from './pages/Dashboard/GuideProfile/GuideProfile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
       {
         path: 'wishlist',
         element:<UserWishlist></UserWishlist>
+      },
+      {
+        path: 'guideProfile',
+        element:<GuideProfile></GuideProfile>
       }
     ]
   }

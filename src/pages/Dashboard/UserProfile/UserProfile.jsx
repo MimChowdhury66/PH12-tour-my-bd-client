@@ -99,7 +99,7 @@ const UserProfile = () => {
                     </div>
                     <div className="form-control ">
                         <label className="input input-bordered flex items-center gap-2">
-                            Add Story                           <input type="text" name="story" className="grow w-full" placeholder="User Photo URL"
+                            Add Story                           <input type="text" name="story" className="grow w-full" placeholder="Add Story"
 
 
                                 {...register("reviewText")}
