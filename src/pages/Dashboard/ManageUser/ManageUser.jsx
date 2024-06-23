@@ -9,7 +9,7 @@ const ManageUser = () => {
     const { data: users = [] } = useQuery({
         queryKey: ['requestToAdmin', search, sort],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/users?search=${search}&sort=${sort}`)
+            const res = await axios.get(`https://tour-my-bangladesh-server.vercel.app/users?search=${search}&sort=${sort}`)
             // console.log(res.data)
             return res.data;
 
