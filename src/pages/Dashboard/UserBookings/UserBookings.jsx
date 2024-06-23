@@ -19,12 +19,12 @@ const UserBookings = () => {
 
     });
     return (
-        <div>
+        <div className='full'>
             <div>
                 <h1 className='text-center text-2xl  font-bold mb-6 '>My Bookings</h1>
             </div>
 
-            <div>
+            <div className='full'>
             <div className="overflow-x-auto">
                 <table className="table  text-center mt-5">
                     {/* head */}

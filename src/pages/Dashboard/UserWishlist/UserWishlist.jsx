@@ -54,11 +54,11 @@ const UserWishlist = () => {
     }
 
     return (
-        <div>
+        <div className='w-full'>
             <div>
                 <h1 className='text-center text-2xl  font-bold mb-6 '>My Wishlist</h1>
             </div>
-            <div>
+            <div className='w-full'>
                 <div className="overflow-x-auto">
                     <table className="table text-center mt-5">
                         {/* head */}

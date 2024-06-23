@@ -4,10 +4,12 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash, FaUser } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 const ManageUser = () => {
+    const [search, setSearch] = useState("");
+    const [sort, setSort] = useState("");
     const { data: users = [] } = useQuery({
-        queryKey: ['requestToAdmin'],
+        queryKey: ['requestToAdmin', search, sort],
         queryFn: async () => {
-            const res = await axios.get('https://tour-my-bangladesh-server.vercel.app/users')
+            const res = await axios.get(`http://localhost:5000/users?search=${search}&sort=${sort}`)
             // console.log(res.data)
             return res.data;
 
@@ -76,32 +78,54 @@ const ManageUser = () => {
 
     }
 
+    const handleSearch = (event) => {
+        event.preventDefault();
+        const search = event.target.search.value;
+        setSearch(search);
+    };
 
     return (
-        <div>
+        <div className='w-full'>
             <div>
                 <h1 className='text-center text-2xl  font-bold mb-6 '>Requested Users {users.length} </h1>
             </div>
 
-            <div className='join'>
-                <div>
-                    <input className='input input-bordered join-item'
-                        placeholder='Search User name'
-                    // value={search}
-                    // onChange={handleSearchChange}
+            <form
+                onSubmit={handleSearch}
+                className="flex flex-col my-3 md:flex-row gap-3"
+            >
+                <div className="flex">
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Search for by email you like"
+                        className="w-full md:w-80 px-3 h-10 rounded-l border-2 border-green-400 focus:outline-none focus:border-green-300"
                     />
+                    <button
+                        type="submit"
+                        className="bg-green-300 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
+                    >
+                        Search
 
+                    </button>
                 </div>
-                <div className='indicator'>
-                    <button className='btn bg-blue-400 join-item'
-                    // onClick={handleSearch}
-                    >Search</button>
-                </div>
-
-            </div>
+                <select
+                    onChange={(e) => setSort(e.target.value)}
+                    id="roleType"
+                    name="roleType"
+                    className="w-full h-10 border-2 border-green-300 focus:outline-none focus:border-green-300 text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
+                >
+                    <option value="All" selected="">
+                        Filter By Role
+                    </option>
+                    <option value="user">User</option>
+                    <option value="guide">Guide</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </form>
 
             {/* user form */}
-            <div>
+            <div className='w-full'>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
