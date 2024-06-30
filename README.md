@@ -3,8 +3,8 @@ This site has everything you need to make the most of your visit to Bangladesh
 
 Live site url: https://tour-my-bangladesh.web.app
 - **Admin username and password** 
-1. username- admin
-2. password- admin@123.com
+1. username- 
+2. password-
 ## Motto- First Travel Bangladesh Then Other Countries
 
 
