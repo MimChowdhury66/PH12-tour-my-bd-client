@@ -51,7 +51,20 @@ their journey was.
 - **Login Page** 
 1. After registration, user can login here
 
+## Technologies 
+1. Reactjs
+2. Nodejs
+3. Expressjs
+4. Mongodb
+5. Firebase
+6. Tailwindcss
+7. DaisyUi
+8. MambaUi
 
+
+## If cloned,follow these steps to run locally
+1.npm i
+2.npm run dev
 
 
 
